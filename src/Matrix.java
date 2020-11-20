@@ -153,17 +153,17 @@ public class Matrix {
     }
 
     //Checks
-    private boolean doesInverseExist() throws IllegalMatrixDimension {
+    public boolean doesInverseExist() throws IllegalMatrixDimension {
         if(!isSquare()) return false;
         return Math.abs(this.getDeterminant()) > EPS;
     }
-    private boolean isSquare(){
+    public boolean isSquare(){
         return columns == rows;
     }
-    private static boolean canBeMultiplied(Matrix first, Matrix second){
+    public static boolean canBeMultiplied(Matrix first, Matrix second){
         return first.columns == second.rows;
     }
-    private static boolean canBeAdded(Matrix first, Matrix second){
+    public static boolean canBeAdded(Matrix first, Matrix second){
         return (first.columns == second.columns)&&
                 (first.rows == second.rows);
     }
